@@ -1,0 +1,6 @@
+local hook; hook = hookmetamethod(game, "__index", function(self,...)    
+                        if tostring(self) == "FireRate" and (...) == "Value" then
+                                return 0.000001
+                            end
+                            return hook(self,...)
+                        end)
